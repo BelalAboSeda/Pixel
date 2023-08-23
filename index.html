@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!--icon-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!--main css-->
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Pixel</title>
+</head>
+
+<body>
+    <!--loader  -->
+    <div class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    <!--light box-->
+    <div class="lightbox">
+        <div class="wrapper">
+            <header>
+                <div class="photographer">
+                    <i class="fa-solid fa-camera"></i>
+                    <span></span>
+                </div>
+                <div class="buttons">
+                    <button type="button" class="btn-close" aria-label="Close"></button>
+                </div>
+            </header>
+            <div class="preview-img">
+                <div class="img"><img src="" alt="preview-img"></div>
+            </div>
+        </div>
+    </div>
+    <div class=" container-fluid">
+        <!--navbar-->
+        <nav class="navbar fixed-top ">
+            <div class=" container-fluid">
+                <a class="navbar-brand">pixel</a>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+                    <input type="text" placeholder="Search images" id="search" class="">
+                </div>
+            </div>
+        </nav>
+        <section class="search d-flex justify-content-center align-items-center">
+            <img src="imgs/search.jpg" class=" img-fluid" alt="">
+            <div class="content">
+                <h1>pixel</h1>
+                <p>Search and download any images in a second</p>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+                    <input type="text" placeholder="Search high-resolution images" id="search" class="rounded-pill">
+                </div>
+            </div>
+        </section>
+        <section class="gallery d-flex flex-column align-items-center">
+            <ul class="images"></ul>
+            <button class="load-more btn rounded-pill">Load More</button>
+        </section>
+    </div>
+
+    <!--Bootstrap-->
+    <script src="js/bootstrap.bundle.js"></script>
+    <!--icon-->
+    <script src="js/all.min.js"></script>
+    <!--main js -->
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>

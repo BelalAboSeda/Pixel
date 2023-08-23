@@ -1,0 +1,361 @@
+/*google font*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  scroll-behavior: smooth;
+  height: 200vh;
+}
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+  
+/*navbar*/
+.navbar {
+  background: #fff;
+}
+
+.navbar .navbar-brand {
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  font-size: 28px;
+  padding-left: 70px;
+}
+
+/*search section*/
+.search {
+  position: relative;
+  height: 90vh;
+}
+
+.search img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+}
+
+.search .content {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.search h1 {
+  font-size: 2.65rem;
+  font-family: 'Poiret One', cursive;
+  font-weight: 600;
+}
+
+.search p {
+  font-size: 1.5rem;
+  margin-top: 8px;
+}
+
+.search .search-box {
+  height: 55px;
+  margin: 45px 0;
+  position: relative;
+}
+
+.search .search-box #search {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  padding-left: 55px;
+}
+
+.search .search-box #search,
+.navbar .search-box #search {
+  border-radius: 16px;
+  outline: none;
+  border: none;
+  font-size: 1.1rem;
+}
+
+.navbar .search-box #search {
+  padding: 5px;
+}
+
+.search .search-box #search-icon,
+.navbar .search-box #search-icon {
+  color: #8d8d8d;
+}
+
+.search-box input::placeholder {
+  color: #929292;
+}
+
+.search-box input:focus::placeholder {
+  color: #bfbfbf;
+}
+
+.search .search-box #search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+}
+
+/*gallery*/
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery .images {
+  gap: 15px;
+  max-width: 95%;
+  margin-top: 40px;
+  columns: 5 340px;
+  list-style: none;
+}
+
+.gallery .images .card {
+  display: flex;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 14px;
+  border-radius: 4px;
+}
+
+.gallery .images img {
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+
+.images .details {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  bottom: -100px;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  justify-content: space-between;
+  transition: bottom 0.1s ease;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.images li:hover .details {
+  bottom: 0;
+}
+
+.photographer {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.photographer svg {
+  font-size: 1.4rem;
+  margin-right: 10px;
+}
+
+.photographer span {
+  font-size: 1.05rem;
+}
+
+.details button {
+  background: #fff;
+  font-size: 1.1rem;
+  padding: 3px 8px;
+}
+
+.details .btn:hover {
+  background: #f2f2f2;
+}
+
+
+.gallery .load-more {
+  --color: #560bad;
+  font-family: inherit;
+  display: inline-block;
+  width: 8em;
+  height: 2.6em;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color .5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
+  transition: all 0.3s;
+}
+
+
+.gallery .load-more:hover {
+  color: #fff;
+  background-color: var(--color);
+}
+
+
+/* light box */
+
+.lightbox {
+  z-index: 5;
+  position: fixed;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.lightbox.show {
+  visibility: visible;
+}
+
+.lightbox .wrapper {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  padding: 20px;
+  max-width: 850px;
+  background: #fff;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: transform 0.1s ease;
+}
+
+.lightbox.show .wrapper {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.wrapper header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .photographer {
+  color: #333;
+}
+
+header .photographer svg {
+  font-size: 1.7rem;
+  cursor: auto;
+}
+
+header .photographer span {
+  font-size: 1.2rem;
+}
+
+header .buttons svg,
+header .buttons .btn-close
+ {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  color: #fff;
+  font-size: 1.2rem!important;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 4px;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+header .buttons .btn-close:hover,
+header .buttons .btn-close:focus{
+  outline: none;
+  border: none;
+}
+header .buttons svg:first-child {
+  color: black;
+}
+header .buttons .btn-close {
+  margin-left: 10px;
+  font-size: 1.25rem!important;
+  color:#BB2525 ;
+}
+
+.wrapper .preview-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.preview-img .img {
+  max-height: 65vh;
+}
+
+.preview-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* media */
+
+@media screen and (max-width: 688px) {
+  .navbar .container-fluid{
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar .navbar-brand{
+    padding-left: 10px;
+  }
+  .lightbox .wrapper {
+    padding: 12px;
+    max-width: calc(100% - 26px);
+  }
+  .wrapper .preview-img {
+    margin-top: 15px;
+  }
+  header .buttons .btn-close {
+    margin-left: 7px;
+  }
+  header .photographer span, .search p {
+    font-size: 1.1rem;
+  }
+  .search .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .search h1 {
+    font-size: 2.65rem;
+  }
+  .search p{
+    padding-left: 15px;
+  }
+  .search .search-box {
+    height: 50px;
+    margin: 5px 0;
+  }
+  .gallery .images {
+    max-width: 100%;
+    padding: 0 13px;
+    margin-top: 20px;
+  }
+  .images .details {
+    bottom: 0px;
+  }
+  .gallery .load-more {
+    padding: 10px 25px;
+    font-size: 1.05rem;
+  }
+  .search .search-box #search::placeholder {
+    content: "Search images";
+  }
+}
